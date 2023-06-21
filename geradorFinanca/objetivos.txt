@@ -1,0 +1,4 @@
+Criar um gerador de Finaças que pode adicionar, remover, atualizar objetivos finaceiros 
+
+criar uma página inicial com o login 
+criar uma página principal com uma tabela com um demostrativo que tem um resumo mensal das despesas fixas e complementares 
