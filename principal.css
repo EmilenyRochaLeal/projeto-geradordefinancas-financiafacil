@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-areas:
+        "aside header header"
+        "aside main main"
+        "footer footer footer";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto 100vh auto;
+}
+
+.o-header {
+    grid-area: header;
+    background-color: #7f7775;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.o-header {
+    display: flex;
+    justify-content: center;
+}
+
+.o-header button {
+    padding: 10px;
+    border-radius: 12px;
+    width: 75px;
+    background: red;
+}
+
+.o-header button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.o-aside {
+    grid-area: aside;
+    height: 100vh;
+    color: #FFFFFF;
+}
+
+.parte1 {
+    flex-direction: column;
+    background-color: #d4cc65;
+    height: 250vh;
+}
+
+.parte1 h3 {
+    text-align: center;
+    font-size: 32px;
+    padding: 30px 0px 15px;
+}
+
+.parte1 ul a {
+    display: flex;
+    text-decoration: none;
+    color: #FFFFFF;
+
+}
+
+.o-main {
+    grid-area: main;
+}
+
+.container {
+    background-color: #7f7775;
+}
+
+#ganhosId {
+    height: 100vh;
+
+}
+
+#ganhosId h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.descricao {
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    gap: 15px;
+}
+
+.descricao input {
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.descricao button {
+    padding: 10px;
+    border-radius: 12px;
+    width: 75px;
+    background: red;
+}
+
+.gastosId {
+    height: 100vh;
+}
+
+.gastosId h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: #ccc;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.preco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.analise {
+    height: 100vh;
+}
+
+.analise h2 {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 50px 0px;
+}
+
+.analise div {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px #ccc;
+    width: 150px;
+    height: 50px;
+} 
+
+
+
+.o-footer {
+    grid-area: footer;
+    padding: 1rem;
+}
+
+footer {
+    background-color: #e5e5e5;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

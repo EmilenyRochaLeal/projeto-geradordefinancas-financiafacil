@@ -1,0 +1,37 @@
+
+
+body{
+    font-family: Courier, "Lucida Console", monospace;
+    background: #d9c06e;
+    color: #03252a;
+    text-align: center;
+}
+
+h1{
+    font-size: 60px;
+    text-align: center; 
+}
+.formulario{
+    position:absolute;
+}
+
+
+input{
+    width: 500px;
+    padding: 12px;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+button{
+    width: 150px;
+    border-radius: 30px;
+    color:#d9c06e;
+    background: #03252a;
+}
+
+button:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+    color: red;
+}
