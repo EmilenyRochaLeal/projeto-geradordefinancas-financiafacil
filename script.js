@@ -1,20 +1,24 @@
-let inpuGanho = document.querySelector('#valorSalario');
+let inputdesc = document.querySelector("#descGanho");
+let inputGanho = document.querySelector('#valorSalario');
 let saidaDesc = document.querySelector('#desc');
 let saidaPreco = document.querySelector('#preco');
 let p1 = document.getElementById('p1');
 let butao = document.getElementById('bnt');
-let entradas = [];
-let total;
-butao.addEventListener("click",()=>{
-    entradas.push(inpuGanho.value)
-    visualizar()
-})
+let dados = new Array();
+let total = 0;
 
-function visualizar(){
-    total = 0
-    for (let i in entradas){
-        total += parseFloat(entradas[i])
+function verificar(){
+    if (localStorage.hasOwnProperty("dados")){
+        dados = JSON.parse(localStorage.getItem("dados"));
     }
-    p1.innerHTML = `total dos ganhos: ${total.toFixed(2)} R$`;
-    inpuGanho.value = '';
 }
+function adicionar(){
+    dados.push({descricao: inputdesc.value, preco: inputGanho.value})
+    localStorage.setItem("dados", JSON.stringify(dados))
+
+}
+
+butao.addEventListener("click", () => {
+    verificar()
+    adicionar()
+});
