@@ -17,11 +17,11 @@ body {
 
 .o-header {
     grid-area: header;
-    background-color: #e8effc;
+    background-color: #6A5ACD;
     text-decoration: none;
     display: flex;
     justify-content: space-between;
-    color: #261332;
+    color: #FFFFF0;
     padding: 50px;
 }
 
@@ -41,13 +41,9 @@ body {
     grid-area: main;
 }
 
-.container {
-    background-color: #e8effc;
-}
-
 #ganhosId {
     height: 100vh;
-
+    background-color: #6A5ACD;
 }
 
 #ganhosId h2 {
@@ -116,8 +112,8 @@ body {
     justify-content: center;
 }
 table{
-    width: 98%;
-    padding: 20px 0;
+    width: 40%;
+    padding: 20px;
     border-radius: 5px;
 }
 
@@ -131,15 +127,15 @@ table{
     align-items: center;
     margin-bottom: 25px;
 }
-
-.analise {
+.analise{
     height: 100vh;
+    background-color: #e8effc;
 }
 
-.analise h2 {
+.analise {
     display: flex;
     justify-content: center;
-    padding: 50px 0px 50px 0px;
+    align-items: center;
 }
 
 .agrupar1{

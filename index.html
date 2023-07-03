@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <title>Finance Fácil</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="btnForm">
-            <button id="btnLogin">Login</button>
-            <button id="btnCadasto">Cadastro</button>
-        </div>
-        <form id="login">
-            <input type="email" placeholder="Email" required >
-            <i class="fas fa-envelope iEmail"></i>
-            <input type="password" placeholder="senha" required >
-            <i class="fas fa-lock iPassword"></i>
-            <div class="Check">
-                <input type="checkbox">
-                <span>Remember password</span>
-            </div>
-            <button type="submit"><a href="principal.html">Login</a></button>
-        </form>
 
-        <form id="cadastro">
-            <input type="email" placeholder="Email" required >
+        <form id="login" class="login">
+            <input type="email" placeholder="Email" required>
             <i class="fas fa-envelope iEmail"></i>
-            <input type="password" placeholder="senha" required >
-            <i class="fas fa-lock iPassword"></i>
-            <div class="Check">
-                <input type="checkbox">
-                <span>Remember password</span>
-            </div>
-            <button type="submit"><a href="principal.html">Cadastrar</a></button>
+            <input type="password" placeholder="senha" required>
         </form>
+        <div class="btnForm">
+            <button id="btnLogin"><a href="principal.html">Login</a></button>
+        </div>
     </div>
 
     </main>
 </body>
+
 </html>

@@ -2,36 +2,43 @@
 
 body{
     font-family: Courier, "Lucida Console", monospace;
-    background: #d9c06e;
-    color: #03252a;
-    text-align: center;
+    height: 100vh;
+    background-color: #6A5ACD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1{
-    font-size: 60px;
-    text-align: center; 
-}
-.formulario{
-    position:absolute;
+
+.container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   gap: 10px;
+
 }
 
 
 input{
-    width: 500px;
-    padding: 12px;
-    border-radius: 15px;
-    margin: 15px;
+    border-radius: 12px;
+    padding: 10px;
 }
 
 button{
-    width: 150px;
-    border-radius: 30px;
-    color:#d9c06e;
-    background: #03252a;
+    padding: 10px;
+    border-radius: 12px;
+    width: 75px;
+    background: #6246ea;
 }
 
 button:hover{
     transform: scale(1.05);
     transition: 0.3s;
     color: red;
+}
+
+button a {
+    text-decoration: none;
+    color: #ffffff;
 }
