@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="principal.css">
@@ -11,20 +13,8 @@
 <body>
     <header class="o-header">
         <h1>Gerador de Finanças </h1>
-        <button><a href="index.html">Sair</a></button>
+        <button><a href="index.html">SAIR</a></button>
     </header>
-
-    <aside class="o-aside" style="max-width:400px;">
-        <div class="parte1">
-            <h3><b>Parte 1</b></h3>
-            <ul class="links">
-                <li><a href="#ganhosId">Ganhos</a></br></li>
-                <li><a href="#gastosId">Gastos</a><br></li>
-                <li><a href="#analiseId">Análise</a></li>
-
-            </ul>
-        </div>
-    </aside>
     <main class="o-main">
         <div class="container">
             <div id="ganhosId">
@@ -33,48 +23,45 @@
                     <label for="desc"></label>
                     <input type="text" id="descGanho" placeholder="Descrever aqui">
                     <input type="number" id="valorSalario" placeholder="Digite o valor">
-                    <button type="submit" id="bnt">Enviar</button>
-                    <p id="p1"></p>
+                    <button type="submit" id="bnt">INCLUIR</button>
+                </div>
+                <div class="tabelaGanhos">
+                    <table id="tabelaEntrada">
+                    </table>
                 </div>
             </div>
             <div id="gastosId" class="gastosId">
                 <h2>Gastos</h2>
                 <div class="preco">
-                    <label for="desc"> Descrição</label>
-                    <input type="text" , id="desc">
-                    <label for="valor"> Preço</label>
-                    <input type="number" id="preco">
+                    <label for="desc"></label>
+                    <input type="text" , id="desc" placeholder="Descrição">
+                    <label for="valor"></label>
+                    <input type="number" id="preco" placeholder="Valor">
+                    <button id='butaoAdicionar'>adicionar</button>
                 </div>
-                <button id='butaoAdicionar'>adicionar</button>
                 <div class="tabela">
-                    <table>
-                        <thead>
-                            <tr>Descrição</tr>
-                            <tr> Preço</tr>
-                            <tr class="acao"></tr>
-                        </thead>
+                    <table id="tabelaDes">
                     </table>
-                    <p id="p1"></p>
                 </div>
             </div>
             <div class="analise" id="analiseId">
                 <h2>Análise</h2>
-                <div>
+                <div class="agrupar1">
                     Entradas: R$
-                    <span id="entrada">0.00</span>
+                    <span id="entrada" style="color: #537519;"><strong>0.00</strong></span>
                 </div>
-                <div>
+                <div class="agrupar2">
                     Saida: R$
-                    <span id="Saida">0.00</span>
+                    <span id="Saida" style="color: #f80400;"><strong>0.00</strong></span>
                 </div>
-                <div>
-                    total: R$
-                    <span id="total">0.00</span>
+                <div class="agrupar3">
+                    Saldo Atual: R$
+                    <span id="total" style="color: #f8ce03;"><strong>0.00</strong></span>
                 </div>
             </div>
         </div>
         <footer class="o-footer">desenvolvido por: Emilene e Kedna Rocha Leal</footer>
-    </main> 
+    </main>
     <script src="script.js"></script>
 </body>
 

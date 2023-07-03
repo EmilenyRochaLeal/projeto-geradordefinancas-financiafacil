@@ -1,3 +1,4 @@
+const tbody = document.querySelector("tbody");
 let inputdesc = document.querySelector("#descGanho");
 let inputGanho = document.querySelector('#valorSalario');
 let saidaDesc = document.querySelector('#desc');
@@ -11,6 +12,7 @@ let valorGanho;
 let gasto;
 let somaSaidas;
 let total;
+
 function verificar(){
     if (localStorage.hasOwnProperty("dados")){
         dados = JSON.parse(localStorage.getItem("dados"));
@@ -33,6 +35,46 @@ function calcularEntradas(){
         }}
     }
 }
+
+function tabelaGanhos() {
+    var table = document.querySelector('#tabelaEntrada');
+    table.innerHTML = '';
+
+    for (var i = 0; i < dados.length; i++) {
+      var descricao = dados[i].descricao;
+      var preco = dados[i].preco;
+
+      var row = document.createElement('tr');
+
+      var descricaoCell = document.createElement('td');
+      descricaoCell.textContent = descricao;
+      row.appendChild(descricaoCell);
+
+      var precoCell = document.createElement('td');
+      precoCell.textContent = preco;
+      row.appendChild(precoCell);
+
+      var acoesCell = document.createElement('td');
+
+      var excluirIcon = document.createElement('i');
+      excluirIcon.className = 'fas fa-trash-alt';
+      excluirIcon.style.cursor = 'pointer';
+      excluirIcon.addEventListener('click', excluirGanho.bind(null, i)); // Chama a função excluirGanho passando o índice como argumento
+      acoesCell.appendChild(excluirIcon);
+
+      row.appendChild(acoesCell);
+
+      table.appendChild(row);
+    }
+  }
+
+  function excluirGanho(index) {
+    dados.splice(index, 1);
+    localStorage.setItem('dados', JSON.stringify(dados))
+    tabelaGanhos(); // Atualiza a tabela após excluir o item
+  }
+
+
 function guardar(){
     if (localStorage.hasOwnProperty("despesas")){
         despesas = JSON.parse(localStorage.getItem("despesas"));
@@ -54,23 +96,63 @@ function calcularSaidas(){
         }
     }
     function analise(){
+        calcularEntradas()
+        calcularSaidas()
         total = somaEntradas - somaSaidas;
-        document.querySelector("#Saida").textContent = somaSaidas.toFixed(2);
         document.querySelector('#entrada').textContent = somaEntradas.toFixed(2);
+        document.querySelector("#Saida").textContent = somaSaidas.toFixed(2);
         document.querySelector("#total").textContent = total.toFixed(2);
     }
+    function tabelaDespesas() {
+        var table = document.querySelector('#tabelaDes');
+        table.innerHTML = '';
+  
+        for (var i = 0; i < despesas.length; i++) {
+          var descricao = despesas[i].descricao;
+          var preco = despesas[i].preco;
+  
+          var row = document.createElement('tr');
+  
+          var descricaoCell = document.createElement('td');
+          descricaoCell.textContent = descricao;
+          row.appendChild(descricaoCell);
+  
+          var precoCell = document.createElement('td');
+          precoCell.textContent = preco;
+          row.appendChild(precoCell);
+  
+          var acoesCell = document.createElement('td');
+  
+          var excluirIcon = document.createElement('i');
+          excluirIcon.className = 'fas fa-trash-alt';
+          excluirIcon.style.cursor = 'pointer';
+          excluirIcon.addEventListener('click', excluirItem.bind(null, i)); // Chama a função excluirItem passando o índice como argumento
+          acoesCell.appendChild(excluirIcon);
+  
+          row.appendChild(acoesCell);
+  
+          table.appendChild(row);
+        }
+      }
+  
+      function excluirItem(index) {
+        despesas.splice(index, 1);
+        localStorage.setItem('despesas', JSON.stringify(despesas))
+        tabelaDespesas(); // Atualiza a tabela após excluir o item
+      }
+    
     butao.addEventListener("click", () => {
         verificar()
         adicionar()
-        calcularEntradas()
+        tabelaGanhos()
         inputGanho.value = '';
         inputdesc.value = '';
         analise()
     });
     bntAdicionar.addEventListener("click",()=> {
         guardar()
-        calcularSaidas()
-        analise()
+        tabelaDespesas()
         saidaDesc.value = '';
         saidaPreco.value = '';
+        analise()
     })
